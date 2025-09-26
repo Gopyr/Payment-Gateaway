@@ -1,5 +1,8 @@
 import axios from "axios";
-const API_PAYMENT_URL = "http://localhost:5000/api/create-transaction";
+
+// Kalau di deploy ke Vercel, pakai relative path saja
+const API_PAYMENT_URL =
+  import.meta.env.VITE_API_PAYMENT_URL || "/api/create-transaction";
 
 export const createTransaction = async (transactionData) => {
   try {
