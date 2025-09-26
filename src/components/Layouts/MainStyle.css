@@ -1,0 +1,89 @@
+ @keyframes slideUp {
+
+     from {
+         opacity: 1;
+         transform: translateY(0);
+     }
+
+     to {
+         opacity: 0;
+         transform: translateY(-20px);
+     }
+
+ }
+
+ @keyframes imgSlideDown {
+     from {
+         transform: translateY(-20px);
+     }
+
+     to {
+         transform: translateY(0);
+         height: 650px;
+     }
+
+ }
+
+ @keyframes imgSlideUp {
+
+     from {
+         transform: translateY(-20px);
+         height: 650px;
+     }
+
+     to {
+         transform: translateY(0);
+         height: 400px;
+     }
+
+ }
+
+ @keyframes logoPositionUp {
+     to {
+         top: 10px;
+     }
+
+ }
+
+ @keyframes logoPositionDown {
+     from {
+         top: 10px;
+     }
+
+     to {
+         top: 280px;
+     }
+
+ }
+
+ .position-up {
+     animation: logoPositionUp 0.5s forwards;
+ }
+
+ .position-down {
+     animation: logoPositionDown 0.5s forwards;
+ }
+
+ .slide-down {
+     animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+ }
+
+ .slide-down-img {
+     animation: imgSlideDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+ }
+
+ .slide-up-img {
+     animation: imgSlideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+ }
+
+ .slide-up {
+     animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+ }
+
+ .card-footer {
+     overflow: hidden;
+     max-height: 500px;
+     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+     will-change: transform, opacity, max-height, padding;
+ }

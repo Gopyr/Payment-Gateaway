@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.cdnfonts.com/css/hyper-viper');
+@import "tailwindcss";
+
+
+:root {
+    --font-caveat: 'Caveat', cursive;
+    --font-hyper-viper: 'Hyper Viper', sans-serif;
+    --slide-left: slide-left 3s ease-out infinite;
+    --slide-right: slide-right 3s ease-in infinite;
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-150px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-right {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(150px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+
+}
