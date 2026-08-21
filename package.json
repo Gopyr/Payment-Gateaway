@@ -1,7 +1,8 @@
 {
-  "name": "Payment Gateaway",
+  "name": "payment-gateway",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "React/Vite QRIS payment-flow prototype with pluggable API services.",
   "type": "module",
   "scripts": {
     "dev": "vite",
