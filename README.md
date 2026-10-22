@@ -1,26 +1,26 @@
 # Payment Gateway Prototype
 
-A React and Vite frontend that demonstrates a QRIS-style payment flow. The current UI validates an amount, builds a QR representation, and includes service modules for creating users and transactions through an API.
+Frontend React + Vite yang memperagakan alur pembayaran gaya QRIS. UI-nya memvalidasi nominal, membangun tampilan QR dari payload pembayaran, dan punya modul service untuk membuat user serta transaksi lewat API.
 
-> **Prototype notice:** this repository is not a payment processor and must not be used to handle real customer funds or personal data without a properly secured backend, provider integration, authentication, audit logging, and compliance review.
+> Ini prototype, bukan payment processor sungguhan. Jangan pakai untuk dana pelanggan asli atau data pribadi tanpa backend yang diamankan, integrasi provider, autentikasi, audit log, dan review compliance.
 
-## What is implemented
+## Yang sudah ada
 
-| Area | Current behavior |
+| Area | Perilaku saat ini |
 | --- | --- |
-| Frontend | React single-page interface with reusable layout components |
-| Amount entry | Client-side validation and Indonesian Rupiah formatting |
-| QR display | QR representation generated from the current payment payload |
-| API services | Separate user and transaction modules using Axios |
-| Build | Vite production build and ESLint checks |
+| Frontend | SPA React dengan komponen layout yang bisa dipakai ulang |
+| Input nominal | Validasi di sisi client dan format Rupiah Indonesia |
+| Tampilan QR | QR dibuat dari payload pembayaran yang sedang berjalan |
+| Service API | Modul user dan transaksi terpisah, keduanya pakai Axios |
+| Build | Production build Vite dan pengecekan ESLint |
 
-The live page is intentionally described as a prototype because the backend transaction call and provider credentials are not part of this repository.
+Halaman live sengaja disebut prototype karena panggilan transaksi ke backend dan kredensial provider memang bukan bagian dari repo ini.
 
-## Requirements
+## Kebutuhan
 
-Node.js 18 or newer and npm are required.
+Node.js 18 ke atas dan npm.
 
-## Run locally
+## Jalankan lokal
 
 ```bash
 npm install
@@ -28,7 +28,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open the local URL printed by Vite. For a production build:
+Buka URL lokal yang dicetak Vite. Untuk build produksi:
 
 ```bash
 npm run lint
@@ -36,25 +36,25 @@ npm run build
 npm run preview
 ```
 
-## API configuration
+## Konfigurasi API
 
-The frontend uses same-origin routes by default. Set these variables when the API is hosted elsewhere:
+Frontend default-nya memakai route same-origin. Set variable berikut kalau API-nya dihost di tempat lain:
 
-| Variable | Default | Purpose |
+| Variable | Default | Kegunaan |
 | --- | --- | --- |
-| `VITE_API_USER_URL` | `/api/create-user` | User creation endpoint |
-| `VITE_API_PAYMENT_URL` | `/api/create-transaction` | Transaction creation endpoint |
+| `VITE_API_USER_URL` | `/api/create-user` | Endpoint pembuatan user |
+| `VITE_API_PAYMENT_URL` | `/api/create-transaction` | Endpoint pembuatan transaksi |
 
-Only public, non-secret configuration belongs in `VITE_*` variables. Provider server keys, signing secrets, and database credentials must remain on the backend.
+Hanya konfigurasi publik yang boleh masuk variable `VITE_*`. Server key provider, signing secret, dan kredensial database wajib tetap di backend.
 
-## Deployment notes
+## Catatan deployment
 
-Deploy the generated `dist/` directory through a Vite-compatible host. Configure the two API URLs for the deployed environment and verify CORS, HTTPS, error handling, idempotency, and webhook signature validation on the server before connecting a payment provider.
+Deploy folder `dist/` hasil build ke host yang mendukung Vite. Set dua URL API untuk environment tersebut, lalu pastikan CORS, HTTPS, error handling, idempotency, dan validasi webhook signature sudah beres di server sebelum menghubungkan provider pembayaran.
 
-## Known limitations
+## Keterbatasan
 
-The repository does not include a payment backend, persistent order state, authentication, webhook processing, automated tests, or production-grade payment security. The QR payload should be treated as a demonstration value until it is replaced by a provider-issued, server-generated transaction payload.
+Repo ini belum punya backend pembayaran, state order yang persisten, autentikasi, pemrosesan webhook, test otomatis, atau keamanan pembayaran tingkat produksi. Anggap payload QR saat ini sebagai nilai demonstrasi sampai diganti payload transaksi yang dibuat server dan diterbitkan provider.
 
-## License
+## Lisensi
 
-Released under the [MIT License](LICENSE).
+[MIT License](LICENSE)
